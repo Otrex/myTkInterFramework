@@ -1,0 +1,2 @@
+* change in core. utils, { core.Setting => config.Setting }
+* remmber to always import the created app class

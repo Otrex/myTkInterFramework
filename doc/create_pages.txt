@@ -1,0 +1,25 @@
+
+How To Create A Page
+--------------------
+
+Firstly, Goto the views folder
+Create Your view file
+
+In the views file you must import
+1. from core.Page import AbstractPage
+2. from core.Utils import * //Note: You can specify the Utils you want to use. 
+It would be indicated in the utility.txt docs
+
+You can also import other views you have created before,
+by using
+	.<view-name>
+then use it in you other pages
+
+
+CREATING NAVIGATION MENU
+------------------------
+
+After importing those views to your page
+to achieve this you have to import the following
+
+from core.components.tag import Menu

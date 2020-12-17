@@ -1,0 +1,38 @@
+
+HOW TO CREATE MENUBAR
+---------------------
+
+Menu Bar is one of the most important features of an app
+It is usuall attached to the 'root' i.e tk.Tk() or controller
+It can be changed by a page by 
+
+controller.config(menu=<menu-instance>)
+
+It is created from the tk.Menu
+We give only to types of menu features for now, that is
+
+HorizontalMenu
+DropdownMenu
+
+1. HorizontalMenu(root, **{labels:commands}) : In this it creates a horizontal menu bars
+It can also accept a dropdown menu too.
+To do such, 
+	define a menu instance
+	e.g menu = tk.Menu(root)
+		drop = DropdownMenu(...)
+		menubar = HorizontalMenu(root, **{labels:{'menu': drop, 'label':<urlabel>}})
+
+After which your must add your HorzonalMenu instance to the root config
+
+		root.config(menu=menubar)
+
+2. DropdownMenu(parent, menuattr={}, sep=[pos-n, (int)], menubtns={labels:comand})
+
+To create a drop down, first instantial a tk.Menu
+i.e
+	m = tk.Menu(root)
+
+pass the m as parent for the dropdown
+then configure it to the root 'root.config(menu=m)'
+
+the parent can also be another dropdown instance, if you want to create nest of options

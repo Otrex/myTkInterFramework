@@ -1,0 +1,85 @@
+HOW TO CREATE AN APP
+--------------------
+
+The entry point of this Framework is the 'entry.py' file.
+This file contains the apps prefixed with 'APP_<name-of-app>'
+the apps must be a function e.g
+
+import:
+1. from config.Pages import START_PAGE, OTHER_PAGES
+2. from core.Page import AbstractPage
+3. from core.Utils import *
+4. from core.App import *
+
+def APP_Login():
+	loginApp = App()
+	loginApp.title("Login")
+	loginApp.geometry("300x250")
+	print(loginApp.winfo_screenwidth())
+
+	loginApp.add_frames(
+	  startpage = LoginView
+	)
+
+	loginApp.mainloop()
+
+Note: You can extent the App class to add more functionality by 
+importing:
+
+1. from core.App import *
+2. from core.SessionHandler import Session
+
+class MyApp(App):
+	def __init__(self, *args, **kwargs):
+		super().__init__(*args, **kwargs)
+		. . . .
+
+Once you do this, there is no need to import 4. in your 
+entry.py just import the custom app you have extended
+
+
+METHODS OF APP
+--------------
+
+The App is an extention of the tk.Tk(), so its methods are similar
+with that of tk.Tk() e.g
+
+.title(str) : This is the Title on the app
+.geometry(str) : This is the size it would first appear as str is in the form f'{w}x{h}'
+.winfo_screenwidth() : This returns the width of the PC
+.attributes(type, value): This is used to add more featurs to the app view tk.Tk docs for more
+e.g app.attributes("-alpha", 0.9) //transparency
+
+We Also have App specific methods :
+.add_frame(startpage = Page, otherpages = [Page])
+.go_home() : This is used to move to the specified startpage of the app
+.show_frame(frame) :  This is used to display the pages desired. 
+Warning: Do not use it For the start page instead use .go_home()
+
+Note: For an app you create, Attach this
+
+.add_frames(
+	startpage = START_PAGE,
+	otherpages = OTHER_PAGES.values()
+)
+
+
+MORE FLEX
+---------
+Adding User Authentication:
+
+def APP_app1():
+	.....
+
+def APP_app2():
+	if Session.get():
+		......
+
+Can be used for Authentication
+the session stores the Authenticated user view Authentication for more
+
+
+OTHER INFORMATION
+-----------------
+
+The 'controller' is usually the root app created in APP_

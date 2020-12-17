@@ -1,0 +1,55 @@
+x = Object(kin=500, name = "Jeft")
+y = Object(dan = 888, name = "Jeft")
+x = x - y
+x["obi"] = "Good"
+def k(self):
+	self.dan = self.dan * 55
+	print("Happy")
+
+
+print(len(x))
+for i in x:
+	print(i)
+
+# x.k(x)
+
+print(x)
+def f(**k):
+	print(k)
+x = Object(kin=500, name = "Jeft")
+f(**x._dict())
+# print(x.dan)
+# print(dat)
+
+HOW TO USE THE OBJECT DATA STRUCTURE
+------------------------------------
+
+The Object data structure is built to work like the javascript objects
+
+obj = Object(<datas, >)
+
+initializes it
+You can store both functions and other variables in it
+
+METHODS
+-------
+._dict() :This returns a python dictionary of all its contents
+._values(): This returns only the values stored
+
+
+ACCESSING THE DATA
+------------------
+You can either use 'Object_instance['<property>'] or just 'Object_instance.property'
+
+ITERATION
+---------
+It also supports iteration
+
+OPERATION THAT CAN BE PERFORMED
+-------------------------------
+
+'-' : It supports the subtraction operation. i.e Obj_instance1 - Obj_instance2
+when you subtract, it would return a new Obj_instance with only values that are not
+Obj_instance2 
+
+'+' : Similar to the subtraction, This one joins the two instances together
