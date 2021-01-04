@@ -1,7 +1,7 @@
 from config.Models import *
 
 db = [
-	User, Person
+	User
 ]
 
 for dbs in db:
@@ -9,3 +9,4 @@ for dbs in db:
 		print(i+1, ")  " ,entries)
 
 	print("---"*20)
+

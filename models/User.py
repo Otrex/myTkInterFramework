@@ -9,10 +9,6 @@ class User(Base, AbsModel):
     email = Column(String(120), unique=True)
     _password = Column(String(500), default = None, unique=True)
 
-    def __init__(self, name=None, email=None):
-    	self.name = name
-    	self.email = email
-
     def set_password(self, password):
     	self._password = HASHER(password.encode()).hexdigest()
 
@@ -29,4 +25,8 @@ class User(Base, AbsModel):
     		return None 
 
     def __repr__(self):
-        return '<User name="%r" email="%r">' % (self.name, self.email)
+        return '<User name=%r email=%r password=%r>' % (self.name, self.email, self._password)
+
+    @staticmethod
+    def hash(password):
+        return HASHER(password.encode()).hexdigest()

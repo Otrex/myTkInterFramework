@@ -1,2 +1,7 @@
 * change in core. utils, { core.Setting => config.Setting }
 * remmber to always import the created app class
+
+* i have added menu feature i.e use_menu = 'gen'
+means the menu specified in the MyApp in app.py file would be used for that frame
+
+* setting has_access = False in the App inheritance does not allow other frames to be accessed

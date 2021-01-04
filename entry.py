@@ -5,9 +5,9 @@ from app import MyApp
 
 def APP_Login():
 	app = MyApp()
-	app.title('Window')
-	app.geometry(f'{app.winfo_screenwidth()}x{app.winfo_screenheight()}')
-	
+	app.title('My Small Apps')
+	# app.geometry(f'{app.winfo_screenwidth()}x{app.winfo_screenheight()}')
+	app.geometry('500x400')
 	app.add_frames(
 		startpage = START_PAGE,
 		otherpages = OTHER_PAGES

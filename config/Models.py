@@ -1,6 +1,5 @@
 # Import all your models here
 from models.User import User
-from models.Person import Person
 
 
 # This Creates all the database

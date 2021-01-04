@@ -4,11 +4,22 @@ from config.Settings import *
 
 
 class App(tk.Tk):
+    threads = []
     def __init__(self, *args, **kwargs):
         tk.Tk.__init__(self, *args, **kwargs)
         self.headers()
         self.init()
+        self.menu()
+
+    def destroy(self):
+        print(self.threads)
+        for thr in self.threads:
+            thr.raise_exception()
+        super().destroy()
         
+    def menu(self):
+        menu = tk.Menu(self)
+        return menu
 
     def headers (self):
         self.tk.call('wm', 'iconphoto', self._w, tk.PhotoImage(file=LOGO))
@@ -47,6 +58,9 @@ class App(tk.Tk):
         frame = self.frames[cont]
         print(frame)
         frame.tkraise()
+        self.config(menu=self.menu())
+        if frame.use_menu != 'gen':
+            self.config(menu=frame.menu())
 
     def add_frames(self, startpage=None, otherpages = [], *frames):
         # Adds the frames to the page
