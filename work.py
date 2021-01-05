@@ -20,8 +20,9 @@ def generateExecutable(*args):
 		'index.py', "--onefile"
 	])
 	shutil.copytree("./dependencies/", "./dist/dependencies/")
-	shutil.rmtree("./build")
-	os.remove("index.spec")
+	if ("-keep" not in args):
+		shutil.rmtree("./build")
+		os.remove("index.spec")
 
 def createview(name="Page", *args):
 	data = snips.view(name)

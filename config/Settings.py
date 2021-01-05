@@ -13,6 +13,9 @@ OTHER_FONTS = {
 # This is the Logo section of the project
 LOGO = './dependencies/logo.png'
 
+# This is the cache dir
+CACHE = './dependencies/.cache'
+
 # This is the intial title
 TITLE = 'CREATE A BOOK'
 
