@@ -1,6 +1,9 @@
 import sys
 import os
 import manager.snippets as snips
+import PyInstaller.__main__
+import shutil
+from manager.functions import copy
 
 print("--------------------------------------------\n  Note:Use 'Tab' instead of 4 spaces\n------------------------------------------")
 args = sys.argv[1:]
@@ -8,8 +11,17 @@ args = sys.argv[1:]
 commands = {
 	"create_view": lambda: createview(*args[1:]),
 	"create_model": lambda: createmodel(*args[1:]),
-	"start_app": lambda: startapp()
+	"start_app": lambda: startapp(),
+	"generate_executable": lambda: generateExecutable()
 }
+
+def generateExecutable(*args):
+	PyInstaller.__main__.run([
+		'index.py', "--onefile"
+	])
+	shutil.copytree("./dependencies/", "./dist/dependencies/")
+	shutil.rmtree("./build")
+	os.remove("index.spec")
 
 def createview(name="Page", *args):
 	data = snips.view(name)
@@ -73,6 +85,7 @@ def createmodel(name="Dummy", *args):
 	print("\n:::Note: The default column type is string, you can change it to any of your choice\nVisit SQLAlchemy documentation for more...")
 
 def startapp(*args):
+	print("App is starting...")
 	os.system("py index.py")
 
 commands[args[0]]()

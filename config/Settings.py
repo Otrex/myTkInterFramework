@@ -11,7 +11,7 @@ OTHER_FONTS = {
 }
 
 # This is the Logo section of the project
-LOGO = 'logo.png'
+LOGO = './dependencies/logo.png'
 
 # This is the intial title
 TITLE = 'CREATE A BOOK'
@@ -20,6 +20,6 @@ TITLE = 'CREATE A BOOK'
 HASHER = hashlib.sha256
 
 # DataBase Settings
-DB_NAME = 'myDB.db'
+DB_NAME = './dependencies/myDB.db'
 DB_HOST = 'sqlite:///' + BASE_DIR + '//' + DB_NAME
 
