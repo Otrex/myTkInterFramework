@@ -1,7 +1,7 @@
 # myTkInterFramework
 
-
-This frame work is used to make creating Aplications easier
+<b>Note: This framework has only been tested on windows..</b>
+This frame work is used to make creating Applications easier
 <h2>To start test</h2>
 Use:
 
@@ -14,13 +14,15 @@ Use:
   py work.py create_view <view-name>
 
 
-<u>To create a model</u>
+<h2>To create a model</h2>
 Use:
 
   py work.py create_model <model-name>
 
 
-<u>To create a exe</u>
+<h2>To create a exe</h2>
 Use:
 
   py work.py generate_executable
+  
+  
