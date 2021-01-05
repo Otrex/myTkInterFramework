@@ -1,7 +1,7 @@
 # myTkInterFramework
-
+This frame work is used to make creating Applications easier<br>
 <b>Note: This framework has only been tested on windows..</b>
-This frame work is used to make creating Applications easier
+
 <h2>To start test</h2>
 Use:
 
